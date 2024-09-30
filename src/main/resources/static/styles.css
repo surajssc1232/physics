@@ -1,0 +1,225 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    background-color: #121212;
+    color: #E0E0E0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body.light-mode {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+.container {
+    width: 80%;
+    max-width: 800px;
+    margin-top: 20px;
+}
+
+.sidebar-container {
+    position: fixed;
+    top: 0;
+    left: -200px; /* Initially hide the sidebar */
+    height: 100%;
+    width: 200px;
+    overflow: hidden;
+    transition: left 0.3s;
+    background-color: #121212;
+    z-index: 1000;
+}
+
+body.light-mode .sidebar-container {
+    background-color: #FFFFFF;
+}
+
+.sidebar {
+    width: 200px;
+    margin-top: 60px; /* Shift the tags section down */
+    padding: 20px;
+}
+
+.toggle-button, .theme-toggle-button {
+    position: fixed;
+    top: 20px;
+    background-color: #000; /* Set button color to black */
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 1001;
+}
+
+.toggle-button {
+    left: 20px;
+}
+
+.theme-toggle-button {
+    right: 20px;
+}
+
+body.light-mode .toggle-button, body.light-mode .theme-toggle-button {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input, .form-group textarea, .form-group select {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #1E1E1E;
+    color: #E0E0E0;
+    border: 1px solid #333;
+    border-radius: 5px;
+}
+
+body.light-mode .form-group input, body.light-mode .form-group textarea, body.light-mode .form-group select {
+    background-color: #FFFFFF;
+    color: #000000;
+    border: 1px solid #CCC;
+}
+
+.form-group button {
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.form-group button:hover {
+    background-color: #0056b3;
+}
+
+.questions {
+    margin-top: 30px;
+}
+
+.question {
+    border-bottom: 1px solid #333;
+    padding: 10px 0;
+}
+
+body.light-mode .question {
+    border-bottom: 1px solid #CCC;
+}
+
+.question button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.question button:hover {
+    background-color: #218838;
+}
+
+.feedback {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.tag-container {
+    margin-top: 20px;
+}
+
+.tag {
+    display: block;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #1E1E1E;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    color: #E0E0E0;
+}
+
+body.light-mode .tag {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+.tag:hover {
+    transform: scale(1.05);
+    background-color: #333;
+}
+
+body.light-mode .tag:hover {
+    background-color: #CCC;
+}
+
+h1 {
+    font-family: 'Garamond', serif;
+    font-size: 2.5em; /* Increase the size of the headline */
+    color: #E0E0E0;
+    margin-bottom: 20px;
+}
+
+body.light-mode h1 {
+    color: #000000;
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+body.light-mode .modal {
+    background-color: rgba(255,255,255,0.4); /* White w/ opacity */
+}
+
+.modal-content {
+    background-color: #121212;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+body.light-mode .modal-content {
+    background-color: #FFFFFF;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
