@@ -3,6 +3,7 @@ package com.example.physics.physics.Controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.physics.physics.Entity.Questions;
 import com.example.physics.physics.Service.QService;
 
+
+
 @RestController
 @RequestMapping("/api/questions")
 public class QuestionController {
@@ -26,7 +29,13 @@ public class QuestionController {
     public List<Questions> getAllQuestions() {
         return questionService.getAllQuestions();
     }
+    @Value("${question.add.key}")
+    private String questionAddKey;
 
+    @GetMapping("/validateKey")
+    public boolean validateKey(@RequestParam String key) {
+        return questionAddKey.equals(key);
+    }
     @PostMapping
     public Questions createQuestion(@RequestBody Questions question) {
         return questionService.createQuestion(question);
@@ -46,4 +55,7 @@ public class QuestionController {
     public List<Questions> getQuestionsByCategory(@RequestParam String category) {
         return questionService.getQuestionsByCategory(category);
     }
+
+   
+
 }

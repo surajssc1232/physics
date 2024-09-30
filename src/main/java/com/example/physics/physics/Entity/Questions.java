@@ -12,7 +12,7 @@ public class Questions {
     private Long id;
     private String content;
     private String solution;
-    private String category; // New field for category
+    private String category; 
 
     // Getters and setters
     public Long getId() {

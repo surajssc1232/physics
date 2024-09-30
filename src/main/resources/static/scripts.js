@@ -110,6 +110,39 @@ function checkAnswer(id, correctSolution) {
         feedbackDiv.style.color = 'red';
     }
 }
+async function validateKey() {
+    const key = prompt("Enter the key to add a question:");
+    if (!key) {
+        alert("Key is required to add a question.");
+        return false;
+    }
 
-// Fetch questions when the page loads
+    const response = await fetch(`/api/questions/validateKey?key=${key}`);
+    const isValid = await response.json();
+
+    if (!isValid) {
+        alert("Incorrect key.");
+        return false;
+    }
+
+    return true;
+}
+
+async function openFormWithKeyValidation() {
+    const isValid = await validateKey();
+    if (isValid) {
+        openForm();
+    }
+}
+
+function redirectToMCQs() {
+    window.location.href = 'mcqs.html';
+}
+
+function redirectToHome() {
+    window.location.href = 'index.html';
+}
+
+document.getElementById('addQuestionLink').onclick = openFormWithKeyValidation;
+
 window.onload = fetchQuestions;

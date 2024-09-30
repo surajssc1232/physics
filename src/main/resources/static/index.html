@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Questions</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&family=Garamond&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -14,6 +14,7 @@
         <div class="sidebar">
             <h2>Tags</h2>
             <div class="tag-container">
+                <div class="tag" onclick="redirectToMCQs()">MCQs</div>
                 <div class="tag" onclick="fetchQuestionsByTag('Mechanics')">Mechanics</div>
                 <div class="tag" onclick="fetchQuestionsByTag('Thermodynamics')">Thermodynamics</div>
                 <div class="tag" onclick="fetchQuestionsByTag('Electromagnetism')">Electromagnetism</div>
@@ -26,7 +27,7 @@
     </div>
     <div class="container">
         <h1>Questions</h1>
-        <a href="#" onclick="openForm()">Add a Question</a>
+        <a href="javascript:void(0);" id="addQuestionLink">Add a Question</a>
         <div class="questions" id="questions"></div>
     </div>
 
@@ -63,5 +64,8 @@
     </div>
 
     <script src="scripts.js"></script>
+    <div class="home-button-container">
+        <button onclick="redirectToHome()" class="home-button">Home</button>
+    </div>
 </body>
 </html>

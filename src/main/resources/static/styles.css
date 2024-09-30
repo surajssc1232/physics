@@ -1,6 +1,6 @@
 body {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
+    font-family: 'Poppins', poppins;
+    font-weight: 200;
     background-color: #121212;
     color: #E0E0E0;
     margin: 0;
@@ -9,7 +9,9 @@ body {
     flex-direction: column;
     align-items: center;
 }
-
+h1 {
+    font-family: inherit; 
+}
 body.light-mode {
     background-color: #FFFFFF;
     color: #000000;
@@ -24,7 +26,7 @@ body.light-mode {
 .sidebar-container {
     position: fixed;
     top: 0;
-    left: -200px; /* Initially hide the sidebar */
+    left: -200px; 
     height: 100%;
     width: 200px;
     overflow: hidden;
@@ -39,14 +41,14 @@ body.light-mode .sidebar-container {
 
 .sidebar {
     width: 200px;
-    margin-top: 60px; /* Shift the tags section down */
+    margin-top: 60px; 
     padding: 20px;
 }
 
 .toggle-button, .theme-toggle-button {
     position: fixed;
     top: 20px;
-    background-color: #000; /* Set button color to black */
+    background-color: #000; 
     color: white;
     border: none;
     padding: 10px;
@@ -143,14 +145,14 @@ body.light-mode .question {
 }
 
 .tag {
-    display: block;
-    padding: 10px;
-    margin-bottom: 10px;
     background-color: #1E1E1E;
     border-radius: 5px;
     cursor: pointer;
     transition: transform 0.2s;
     color: #E0E0E0;
+    padding: 5px 10px;
+    margin: 5px;
+    text-decoration: none;
 }
 
 body.light-mode .tag {
@@ -169,7 +171,7 @@ body.light-mode .tag:hover {
 
 h1 {
     font-family: 'Garamond', serif;
-    font-size: 2.5em; /* Increase the size of the headline */
+    font-size: 2.5em; 
     color: #E0E0E0;
     margin-bottom: 20px;
 }
@@ -178,30 +180,30 @@ body.light-mode h1 {
     color: #000000;
 }
 
-/* Modal styles */
+
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1000; /* Sit on top */
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
 }
 
 body.light-mode .modal {
-    background-color: rgba(255,255,255,0.4); /* White w/ opacity */
+    background-color: rgba(255,255,255,0.4); 
 }
 
 .modal-content {
     background-color: #121212;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 15% auto; 
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 80%; 
     max-width: 500px;
     border-radius: 10px;
 }
@@ -222,4 +224,36 @@ body.light-mode .modal-content {
     color: #000;
     text-decoration: none;
     cursor: pointer;
+}
+
+.home-button-container {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.home-button {
+    background-color: #1E1E1E;
+    color: #E0E0E0;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.home-button:hover {
+    background-color: #333;
+}
+
+body.light-mode .home-button {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+body.light-mode .home-button:hover {
+    background-color: #CCC;
 }

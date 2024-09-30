@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MCQs</title>
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    </head>
+<body>
+    <div class="container">
+        <h1>MCQs</h1>
+        <div class="questions" id="questions"></div>
+    </div>
+    <div class="home-button-container">
+        <button onclick="redirectToHome()" class="home-button">Home</button>
+    </div>
+    <script src="scripts.js"></script>
+    <script>
+        
+        window.onload = () => fetchQuestionsByTag('MCQs');
+    </script>
+</body>
+</html>
